@@ -23,7 +23,10 @@ public class Review {
         this.comment = comment;
         this.hiking_date = hiking_date;
     }
-    
-    
+
+    public int getRating() {
+        return rating;
+    }
+
     
 }

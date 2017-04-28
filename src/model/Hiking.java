@@ -40,5 +40,8 @@ public class Hiking {
         this.toilet = toilet;
     }
     
-    
+    public void addReview(Review new_review){
+        this.rating = ( (this.rating*this.reviews.size()) + new_review.getRating() ) / (this.reviews.size()+1);
+        this.reviews.add(new_review);
+    }
 }
