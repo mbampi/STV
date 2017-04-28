@@ -15,13 +15,13 @@ public class Review {
     private User user;
     private int rating;
     private String comment;
-    private Date hiking_date;
+    private Date hike_date;
 
-    public Review(User user, int rating, String comment, Date hiking_date) {
+    public Review(User user, int rating, String comment, Date hike_date) {
         this.user = user;
         this.rating = rating;
         this.comment = comment;
-        this.hiking_date = hiking_date;
+        this.hike_date = hike_date;
     }
 
     public int getRating() {

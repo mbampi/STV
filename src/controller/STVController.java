@@ -6,7 +6,7 @@
 package controller;
 
 import java.util.ArrayList;
-import model.Hiking;
+import model.Hike;
 import model.User;
 
 /**
@@ -15,7 +15,7 @@ import model.User;
  */
 public class STVController {
     private ArrayList<User> users;
-    private ArrayList<Hiking> hikings;
+    private ArrayList<Hike> hikes;
     private User login_user;
     
     public boolean login(String email, String password){

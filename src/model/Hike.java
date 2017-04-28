@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author matheus
  */
-public class Hiking {
+public class Hike {
     private String name;
     private ArrayList<URL> images;
     private Double distance;
@@ -27,7 +27,7 @@ public class Hiking {
     private boolean public_transit;
     private boolean toilet;
 
-    public Hiking(String name, ArrayList<URL> images, Double distance, Time time, CourseMap location, String season, boolean camping, boolean dog_friendly, boolean public_transit, boolean toilet) {
+    public Hike(String name, ArrayList<URL> images, Double distance, Time time, CourseMap location, String season, boolean camping, boolean dog_friendly, boolean public_transit, boolean toilet) {
         this.name = name;
         this.images = images;
         this.distance = distance;

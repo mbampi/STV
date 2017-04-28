@@ -15,8 +15,8 @@ public class User {
     private String email;
     private String password;
     private String name;
-    private ArrayList<Hiking> want_to_do_trails;
-    private ArrayList<Hiking> completed_trails;
+    private ArrayList<Hike> want_to_do_trails;
+    private ArrayList<CompletedHike> completed_trails;
 
     public User(String email, String password, String name) {
         this.email = email;
@@ -48,6 +48,9 @@ public class User {
         this.name = name;
     }
     
+    public void addWantToDoTrail(Hike new_hike){
+        this.want_to_do_trails.add(new_hike);
+    }
     
     
 }
