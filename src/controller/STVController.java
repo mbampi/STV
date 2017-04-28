@@ -18,5 +18,29 @@ public class STVController {
     private ArrayList<Hiking> hikings;
     private User login_user;
     
+    public boolean login(String email, String password){
+        User tempUser = this.getUserByEmail(email);
+        if(tempUser!=null && tempUser.getPassword().equals(password)){
+            this.login_user = tempUser;
+            return true;
+        }
+        return false;
+    }
+    
+    public void logout(){
+        this.login_user = null;
+    }
+    
+    private User getUserByEmail(String email){
+        for(User user : users){
+            if(user.getEmail().equals(email))
+                return user;
+        }
+        return null;
+    }
+    
+    public boolean isLogin(){
+        return !(login_user==null);
+    }
     
 }
