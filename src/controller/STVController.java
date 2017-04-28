@@ -43,4 +43,12 @@ public class STVController {
         return !(login_user==null);
     }
     
+    public boolean signUp(User new_user){
+        for(User user : this.users)
+            if(user.getEmail().equals(new_user.getEmail())) return false;
+        
+        this.users.add(new_user);
+        return true;
+    }
+    
 }
