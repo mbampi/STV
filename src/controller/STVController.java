@@ -19,7 +19,4 @@ public class STVController {
     private User login_user;
     
     
-    
-    
-    
 }
