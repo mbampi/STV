@@ -22,5 +22,17 @@ public class CompletedHike {
         this.date = date;
         this.time = time;
     }
-    
+
+    public Hike getHike() {
+        return hike;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
 }
