@@ -11,6 +11,10 @@ import com.google.firebase.auth.FirebaseCredentials;
 import com.google.firebase.database.FirebaseDatabase;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -59,8 +63,8 @@ public class STV extends Application {
         // END OF FIREBASE CONFIG
         
         // OAUTH 2.0
-        // CLIENT ID: 932786064771-ed78f26riqn79u5puetarbc106b5so9o.apps.googleusercontent.com
-        // CLIENT SECRET KEY: unth-P23xd-MQ9Uj5nqCuD5F
+        // CLIENT ID: 932786064771-1j3pc0ulilatujh6rh156l4s1n1984gc.apps.googleusercontent.com
+        // CLIENT SECRET KEY: wOeyt9JryVc2tS61bEKCqd3F
         
         FileInputStream refreshToken = new FileInputStream("path/to/refreshToken.json");
 
@@ -87,6 +91,31 @@ public class STV extends Application {
         FirebaseDatabase defaultDatabase = FirebaseDatabase.getInstance();
         // END OF INITIALIZE APP
         
+        //
+        
+        //
+        
+        try {
+            // URL TO USER AUTHORIZATION
+            URL myURL = new URL("https://accounts.google.com/o/oauth2/v2/auth?"
+                    + "scope=email%20profile&"      
+                    + "response_type=code&"
+                    + "state=security_token%3D138r5719ru3e1%26url%3Dhttps://oauth2.example.com/token&"
+                    + "redirect_uri=http://127.0.0.1:9004&" 
+                    + "client_id=client_id");
+            URLConnection myURLConnection = myURL.openConnection();
+            myURLConnection.connect();
+        }catch (MalformedURLException e) { 
+            // new URL() failed
+            // ...
+        } catch (IOException e) {   
+            // openConnection() failed
+            // ...
+        }        
+                
+                
+                
+                
         }catch(FileNotFoundException e){
             
         }
