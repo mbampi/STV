@@ -17,7 +17,7 @@ public class STVController {
     private ArrayList<User> users;
     private ArrayList<Hike> hikes;
     private User login_user;
-    
+        
     public boolean login(String email, String password){
         User tempUser = this.getUserByEmail(email);
         if(tempUser!=null && tempUser.getPassword().equals(password)){

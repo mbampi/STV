@@ -27,6 +27,5 @@ public class Review {
     public int getRating() {
         return rating;
     }
-
     
 }
