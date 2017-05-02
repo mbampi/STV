@@ -91,10 +91,7 @@ public class STV extends Application {
         FirebaseDatabase defaultDatabase = FirebaseDatabase.getInstance();
         // END OF INITIALIZE APP
         
-        //
-        
-        //
-        
+        // OAUTH 2.0
         try {
             // URL TO USER AUTHORIZATION
             URL myURL = new URL("https://accounts.google.com/o/oauth2/v2/auth?"
@@ -112,10 +109,7 @@ public class STV extends Application {
             // openConnection() failed
             // ...
         }        
-                
-                
-                
-                
+        // END OF OAUTH 2.0
         }catch(FileNotFoundException e){
             
         }
