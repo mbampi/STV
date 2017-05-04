@@ -50,5 +50,4 @@ public class STVController {
         this.users.add(new_user);
         return true;
     }
-    
 }
