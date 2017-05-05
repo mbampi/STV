@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.24953617810760667" orientation="VERTICAL" prefHeight="1080.0" prefWidth="1920.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="1918.0">
+               <children>
+                  <TextField layoutX="17.0" layoutY="25.0" prefHeight="58.0" prefWidth="600.0" />
+                  <CheckBox layoutX="19.0" layoutY="110.0" mnemonicParsing="false" text="Dog Friendly">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="21.0" layoutY="180.0" mnemonicParsing="false" text="Rated 3.5+">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="210.0" layoutY="116.0" mnemonicParsing="false" text="Camping">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="212.0" layoutY="178.0" mnemonicParsing="false" text="Public Transit">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </CheckBox>
+                  <MenuBar layoutX="1828.0" layoutY="-2.0" prefHeight="15.0" prefWidth="89.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="My page">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Slider layoutX="475.0" layoutY="185.0" prefHeight="24.0" prefWidth="300.0" />
+                  <Slider layoutX="813.0" layoutY="187.0" prefHeight="16.0" prefWidth="300.0" />
+                  <Slider layoutX="1165.0" layoutY="186.0" prefHeight="16.0" prefWidth="300.0" />
+                  <Label layoutX="475.0" layoutY="119.0" text="Distance">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="814.0" layoutY="116.0" text="Time">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1170.0" layoutY="115.0" text="Elevation">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="1359.0">
+               <children>
+                  <Pane layoutX="31.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="31.0">
+                     <children>
+                        <ImageView fitHeight="230.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="17.0" layoutY="248.0" text="TrailName">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="21.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="20.0" layoutY="361.0" text="Difficulty">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="394.0" text="Time">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="425.0" text="Distance">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="457.0" text="Season">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="153.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intermediate">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="156.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.5hour">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="157.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4km">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="158.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spring">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets top="64.0" />
+                     </padding>
+                  </Pane>
+                  <SplitMenuButton layoutX="1707.0" layoutY="31.0" mnemonicParsing="false" text="SplitMenuButton">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </SplitMenuButton>
+                  <Pane layoutX="661.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="230.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="17.0" layoutY="248.0" text="TrailName">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="21.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="20.0" layoutY="361.0" text="Difficulty">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="394.0" text="Time">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="425.0" text="Distance">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="457.0" text="Season">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="153.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intermediate">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="156.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.5hour">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="157.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4km">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="158.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spring">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets top="64.0" />
+                     </padding>
+                  </Pane>
+                  <Pane layoutX="1291.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="230.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="17.0" layoutY="248.0" text="TrailName">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="21.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="20.0" layoutY="361.0" text="Difficulty">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="394.0" text="Time">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="425.0" text="Distance">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="457.0" text="Season">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="153.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intermediate">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="156.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.5hour">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="157.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4km">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="158.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spring">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets top="64.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
