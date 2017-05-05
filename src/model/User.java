@@ -12,13 +12,15 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class User {
+    private final String username;
     private String email;
     private String password;
     private String name;
     private ArrayList<Hike> want_to_do_hikes;
     private ArrayList<CompletedHike> completed_hikes;
 
-    public User(String email, String password, String name) {
+    public User(String username, String email, String password, String name) {
+        this.username = username;
         this.email = email;
         this.password = password;
         this.name = name;
@@ -54,6 +56,10 @@ public class User {
     
     public void addCompletedHike(CompletedHike hike){
         this.completed_hikes.add(hike);
+    }
+
+    public String getUsername() {
+        return username;
     }
     
 }

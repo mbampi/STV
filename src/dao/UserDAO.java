@@ -19,19 +19,20 @@ import model.User;
 public class UserDAO {
     
 //    List<User> findAll();
-    User findByEmail(String email){
+    
+    public User findByUsername(String username){
         User user;
         DatabaseReference user_db = DataBaseManager.getDataBaseReference();
-        
+        System.out.println("sout: " + user_db.child(username).child("name").toString());
 
         return null;            
     }
     
     public void insertUser(User user){
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("user");
-        
-        user_db.child(user.getEmail()).child("name").setValue(user.getName());
-        user_db.child(user.getEmail()).child("password").setValue(user.getPassword());
+        user_db.child(user.getUsername()).child("email").setValue(user.getEmail());
+        user_db.child(user.getUsername()).child("name").setValue(user.getName());
+        user_db.child(user.getUsername()).child("password").setValue(user.getPassword());
         //user_db.child(user.getEmail()).child("completed_trails");
         //user_db.child(user.getEmail()).child("want_to_do_trails");
         

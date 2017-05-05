@@ -5,16 +5,6 @@
  */
 package view;
 
-import com.google.firebase.*;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseCredentials;
-import com.google.firebase.database.FirebaseDatabase;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,6 +32,7 @@ public class STV extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
     }
     
 }
