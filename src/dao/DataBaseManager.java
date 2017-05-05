@@ -18,19 +18,30 @@ import java.io.FileNotFoundException;
  * @author matheus
  */
 public class DataBaseManager {
+    public static FirebaseApp app;
     
-    public static DatabaseReference getDataBaseReference(){
+    public static boolean createDataBase(){
         try{
-        FileInputStream serviceAccount = new FileInputStream("/Users/matheus/NetBeansProjects/FirebaseTest/src/firebasetest/Unknown");
+        FileInputStream serviceAccount = new FileInputStream("/Users/matheus/NetBeansProjects/STV/src/doc/serviceAccountKey.json");
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredential(FirebaseCredentials.fromCertificate(serviceAccount))
                 .setDatabaseUrl("https://stock-trail-vancouver-d8d38.firebaseio.com/")
                 .build();
 
-        FirebaseApp app = FirebaseApp.initializeApp(options);
-        FirebaseDatabase database = FirebaseDatabase.getInstance(app);
-        return database.getReference();
-        }catch(FileNotFoundException ex){ System.out.println("FileNotFound Exception in DataBaseManager.java");return null; }
+        DataBaseManager.app = FirebaseApp.initializeApp(options);
+        return true;
+        }catch(FileNotFoundException ex){ System.out.println("FileNotFound Exception in DataBaseManager.java"); return false; }
+    }
+    
+    public static DatabaseReference getDataBaseReference(){
+        if(DataBaseManager.app != null){
+            FirebaseDatabase database = FirebaseDatabase.getInstance(app);
+            return database.getReference();
+        }else{
+            System.out.println("DataBaseManager.app == null");
+            return null;
+        }
+            
     }
     
     public static void sleep(){

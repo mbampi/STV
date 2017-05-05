@@ -1,4 +1,5 @@
 
+import dao.DataBaseManager;
 import dao.UserDAO;
 import model.User;
 
@@ -17,9 +18,13 @@ public class TestMain {
     
     public static void main(String[] args) {
         User user = new User("mbampi", "matt@email.com", "123123", "Matheus D Bampi");
+        User user1 = new User("mario", "mario@email.com", "234234", "Mario Kart");
         UserDAO user_db =  new UserDAO();
+        DataBaseManager.createDataBase();
         user_db.insertUser(user);
+        user_db.insertUser(user1);
         user_db.findByUsername(user.getUsername());
+        //System.out.println("veja: " + .getEmail());
         System.out.println("the end");
     }
 }

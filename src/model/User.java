@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class User {
-    private final String username;
+    private String username;
     private String email;
     private String password;
     private String name;
@@ -21,6 +21,12 @@ public class User {
 
     public User(String username, String email, String password, String name) {
         this.username = username;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+    }
+    
+    public User(String email, String password, String name) {
         this.email = email;
         this.password = password;
         this.name = name;

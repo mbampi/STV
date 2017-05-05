@@ -9,7 +9,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import model.User;
 
 /**
@@ -21,21 +21,30 @@ public class UserDAO {
 //    List<User> findAll();
     
     public User findByUsername(String username){
-        User user;
-        DatabaseReference user_db = DataBaseManager.getDataBaseReference();
-        System.out.println("sout: " + user_db.child(username).child("name").toString());
-
-        return null;            
+        DatabaseReference ref = DataBaseManager.getDataBaseReference();
+        final ArrayList<User> users = new ArrayList<>();
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                DataSnapshot user_data = snapshot.child("user").child(username);
+                String email = (String) user_data.child("email").getValue();
+                String password = (String) user_data.child("password").getValue();
+                String name = (String) user_data.child("name").getValue();
+                users.add(new User(username, email, password, name));
+                //User from database - Need to return it!
+                System.out.println("user "+users.get(0).getName());
+            }
+            @Override
+            public void onCancelled(DatabaseError de) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        return users.get(0);  
     }
     
     public void insertUser(User user){
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("user");
-        user_db.child(user.getUsername()).child("email").setValue(user.getEmail());
-        user_db.child(user.getUsername()).child("name").setValue(user.getName());
-        user_db.child(user.getUsername()).child("password").setValue(user.getPassword());
-        //user_db.child(user.getEmail()).child("completed_trails");
-        //user_db.child(user.getEmail()).child("want_to_do_trails");
-        
+        user_db.child(user.getUsername()).setValue(new User(user.getEmail(), user.getPassword(), user.getName()));
         DataBaseManager.sleep();
     }
     
