@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
  *
  * @author matheus
  */
-public class DataBaseManager {
+public abstract class DataBaseManager {
     public static FirebaseApp app;
     
     public static boolean createDataBase(){
