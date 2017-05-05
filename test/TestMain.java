@@ -23,8 +23,19 @@ public class TestMain {
         DataBaseManager.createDataBase();
         user_db.insertUser(user);
         user_db.insertUser(user1);
-        user_db.findByUsername(user.getUsername());
-        //System.out.println("veja: " + .getEmail());
-        System.out.println("the end");
+
+
+        user_db.findByUsername(user.getUsername(), new UserDAO.Callback() {
+            @Override
+            public void done(User user) {
+                System.out.println(user.getName());
+                System.out.println("look: " + user.getEmail());
+                System.out.println("the end");
+            }
+        });
+        
+         System.out.println("wait...");
     }
+    
+
 }
