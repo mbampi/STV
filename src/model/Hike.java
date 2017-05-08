@@ -25,7 +25,6 @@ public class Hike {
     private boolean camping;
     private boolean dog_friendly;
     private boolean public_transit;
-    //toilet deleted
 
     public Hike(String name, ArrayList<URL> images, Double distance, Time time, CourseMap location, String season, boolean camping, boolean dog_friendly, boolean public_transit) {
         this.name = name;
@@ -40,7 +39,7 @@ public class Hike {
     }
     
     public void addReview(Review new_review){
-        this.rating = ( (this.rating*this.reviews.size()) + new_review.getRating() ) / (this.reviews.size()+1);
+        this.rating = ((this.rating*this.reviews.size()) + new_review.getRating() ) / (this.reviews.size()+1);
         this.reviews.add(new_review);
     }
 }

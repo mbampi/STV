@@ -41,12 +41,11 @@ public abstract class DataBaseManager {
             System.out.println("DataBaseManager.app == null");
             return null;
         }
-            
     }
     
-    public static void sleep(){
+    public static void sleep(int time){
         try {
-            Thread.sleep(14);
+            Thread.sleep(time);
         } catch (InterruptedException ex) {
             System.out.println("InterruptedException in DataBaseManager.java");
         }
