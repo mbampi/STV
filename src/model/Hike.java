@@ -39,6 +39,19 @@ public class Hike {
         this.public_transit = public_transit;
         this.image = image;
     }
+    
+    public Hike(String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.location = location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+    }
 
     public Integer getHike_id() {
         return hike_id;
