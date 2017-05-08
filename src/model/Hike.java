@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class Hike {
-    private Integer hike_id; // Primary Key
+    private String hike_id; // Primary Key
     private String name;
     private Double distance;
     private Time time;
@@ -26,7 +26,7 @@ public class Hike {
     private String image;
     private ArrayList<Integer> reviews; // Foreign Key from Review
 
-    public Hike(Integer hike_id, String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+    public Hike(String hike_id, String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
         this.hike_id = hike_id;
         this.name = name;
         this.distance = distance;
@@ -53,7 +53,7 @@ public class Hike {
         this.image = image;
     }
 
-    public Integer getHike_id() {
+    public String getHike_id() {
         return hike_id;
     }
 
