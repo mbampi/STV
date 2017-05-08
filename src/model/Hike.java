@@ -24,7 +24,7 @@ public class Hike {
     private boolean dog_friendly;
     private boolean public_transit;
     private String image;
-    private ArrayList<Integer> reviews; // Foreign Key from Review
+    private ArrayList<String> reviews; // Foreign Key from Review (user_id)
 
     public Hike(String hike_id, String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
         this.hike_id = hike_id;
@@ -97,7 +97,7 @@ public class Hike {
         return image;
     }
 
-    public ArrayList<Integer> getReviews() {
+    public ArrayList<String> getReviews() {
         return reviews;
     }
     

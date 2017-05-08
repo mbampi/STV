@@ -13,17 +13,22 @@ import java.util.Date;
  * @author matheus
  */
 public class CompletedHike {
-    private Integer hike; // Foreign Key from Hike
+    private String hike; // Foreign Key from Hike
     private Date date;
     private Time time;
 
-    public CompletedHike(Integer hike, Date date, Time time) {
+    public CompletedHike(String hike, Date date, Time time) {
         this.hike = hike;
         this.date = date;
         this.time = time;
     }
+    
+    public CompletedHike(Date date, Time time) {
+        this.date = date;
+        this.time = time;
+    }
 
-    public Integer getHike() {
+    public String getHike() {
         return hike;
     }
 
