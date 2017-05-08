@@ -35,7 +35,7 @@ public class TestMain {
         //DataBaseManager.sleep(20);*/
         String username = "mbampi"; //test
         //function to get user by username
-        user_dao.findByUsername(username, new UserDAO.userCallback() {
+        user_dao.getUserByUsername(username, new UserDAO.userCallback() {
             @Override
             public void done(User user) { 
                 System.out.println("entra");

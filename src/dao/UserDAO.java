@@ -19,7 +19,7 @@ import model.User;
  */
 public class UserDAO {
 
-    public void findByUsername(String username, userCallback callback){
+    public void getUserByUsername(String username, userCallback callback){
         System.out.println("enterFind"); //test
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
         ref.addValueEventListener(new ValueEventListener() {
