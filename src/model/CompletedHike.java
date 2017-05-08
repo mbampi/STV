@@ -13,17 +13,17 @@ import java.util.Date;
  * @author matheus
  */
 public class CompletedHike {
-    private Hike hike;
+    private Integer hike;
     private Date date;
     private Time time;
 
-    public CompletedHike(Hike hike, Date date, Time time) {
+    public CompletedHike(Integer hike, Date date, Time time) {
         this.hike = hike;
         this.date = date;
         this.time = time;
     }
 
-    public Hike getHike() {
+    public Integer getHike() {
         return hike;
     }
 
