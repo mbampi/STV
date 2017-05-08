@@ -17,7 +17,6 @@ import model.User;
  * @author matheus
  */
 public class UserDAO {
-//    List<User> findAll();
 
     public void findByUsername(String username, Callback callback){
         System.out.println("enterFind"); //test
@@ -27,10 +26,11 @@ public class UserDAO {
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("completeFind"); //test
                 DataSnapshot user_data = snapshot.child("users").child(username);
-                String email = (String) user_data.child("email").getValue();
-                String password = (String) user_data.child("password").getValue();
-                String name = (String) user_data.child("name").getValue();
-                User user = new User(username, email, password, name);
+//                String email = (String) user_data.child("email").getValue();
+//                String password = (String) user_data.child("password").getValue();
+//                String name = (String) user_data.child("name").getValue();
+//                User user = new User(username, email, password, name);
+                User user = user_data.getValue(User.class);
                 
                 if (callback != null) { //if completed
                     //send String message
