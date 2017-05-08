@@ -32,7 +32,7 @@ public class TestMain {
                 //print message
             }
         });
-        DataBaseManager.sleep(20);*/
+        //DataBaseManager.sleep(20);*/
         String username = "mbampi"; //test
         //function to get user by username
         user_dao.findByUsername(username, new UserDAO.Callback() {
