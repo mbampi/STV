@@ -12,6 +12,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import model.Hike;
+import model.Review;
 
 /**
  *
@@ -75,6 +76,30 @@ public class HikeDAO {
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("hikes");
         System.out.println("enterInsert");
         user_db.child(hike.getHike_id()).setValue(new Hike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getLocation(), hike.getRating(), hike.getSeason(), hike.isCamping(), hike.isDog_friendly(), hike.isPublic_transit(), hike.getImage()), new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                String message;
+                System.out.println("completeInsert");
+                if (databaseError != null) {
+                    //Error message error
+                    message = "Data could not be saved " + databaseError.getMessage();
+                } else {
+                    //Hike saved successfully
+                    message = "Data saved successfully.";
+                }
+
+                if (callback != null) { //if completed
+                    //send String message
+                    callback.done(message);
+                }
+            }
+        });
+    }
+    
+    public void insertReview(Review review, String hike_id, messageCallback callback) {
+        DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("hikes");
+        System.out.println("enterInsert");
+        user_db.child(hike_id).setValue(review.getUser(), new Review(review.getRating(), review.getComment(), review.getHike_date()), new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;
