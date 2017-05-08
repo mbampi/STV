@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class User {
-    private String username;
+    private String username; //Primary Key
     private String email;
     private String password;
     private String name;
-    private ArrayList<Hike> want_to_do_hikes;
-    private ArrayList<CompletedHike> completed_hikes;
-
+    private ArrayList<Integer> completed_hikes; //Foreign Key of CompletedHike
+    private ArrayList<Integer> want_to_do_hikes; //Foreign Key of Hike
+    
     public User(String username, String email, String password, String name) {
         this.username = username;
         this.email = email;
@@ -54,14 +54,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-    
-    public void addWantToDoTrail(Hike hike){
-        this.want_to_do_hikes.add(hike);
-    }
-    
-    public void addCompletedHike(CompletedHike hike){
-        this.completed_hikes.add(hike);
     }
 
     public String getUsername() {
