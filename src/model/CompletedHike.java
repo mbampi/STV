@@ -13,7 +13,7 @@ import java.util.Date;
  * @author matheus
  */
 public class CompletedHike {
-    private Integer hike;
+    private Integer hike; // Foreign Key from Hike
     private Date date;
     private Time time;
 

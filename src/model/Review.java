@@ -12,7 +12,7 @@ import java.util.Date;
  * @author matheus
  */
 public class Review {
-    private Integer review_id;
+    private Integer review_id; // Primary Key
     private User user;
     private Integer rating;
     private String comment;
