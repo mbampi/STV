@@ -96,6 +96,21 @@ public class HikeDAO {
         });
     }
     
+    public void deleteHike(String hike_id, messageCallback callback) {
+        DatabaseReference db = DataBaseManager.getDataBaseReference().child("hikes");
+        db.equalTo(hike_id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().setValue(null);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("OnCancelled deleteReview: " +databaseError.toString());
+            }
+        });
+    }
+    
     public void insertReview(Review review, String hike_id, messageCallback callback) {
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("hikes");
         System.out.println("enterInsert");
@@ -116,6 +131,21 @@ public class HikeDAO {
                     //send String message
                     callback.done(message);
                 }
+            }
+        });
+    }
+    
+    public void deleteReview(String username, String hike_id, messageCallback callback) {
+        DatabaseReference db = DataBaseManager.getDataBaseReference().child("hikes");
+        db.child(hike_id).child("reviews").equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().setValue(null);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("OnCancelled deleteReview: " +databaseError.toString());
             }
         });
     }
