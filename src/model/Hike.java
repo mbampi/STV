@@ -5,7 +5,6 @@
  */
 package model;
 
-import java.net.URL;
 import java.sql.Time;
 import java.util.ArrayList;
 
@@ -18,7 +17,7 @@ public class Hike {
     private String name;
     private Double distance;
     private Time time;
-    private CourseMap location;
+    private String location;
     private Integer rating;
     private String season;
     private boolean camping;
@@ -27,7 +26,7 @@ public class Hike {
     private String image;
     private ArrayList<Integer> reviews; // Foreign Key from Review
 
-    public Hike(Integer hike_id, String name, Double distance, Time time, CourseMap location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+    public Hike(Integer hike_id, String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
         this.hike_id = hike_id;
         this.name = name;
         this.distance = distance;
@@ -57,7 +56,7 @@ public class Hike {
         return time;
     }
 
-    public CourseMap getLocation() {
+    public String getLocation() {
         return location;
     }
 
