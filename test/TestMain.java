@@ -18,23 +18,34 @@ public class TestMain {
     
     public static void main(String[] args) {
         User user = new User("mbampi", "matt@email.com", "123123", "Matheus D Bampi");
-        User user1 = new User("mario", "mario@email.com", "234234", "Mario Kart");
-        UserDAO user_db =  new UserDAO();
+        //User user1 = new User("mario", "mario@email.com", "234234", "Mario Kart");
+        UserDAO user_dao =  new UserDAO();
         DataBaseManager.createDataBase();
-        user_db.insertUser(user);
-        user_db.insertUser(user1);
-
-
-        user_db.findByUsername(user.getUsername(), new UserDAO.Callback() {
+        /*
+        //function to insert user
+        user_dao.insertUser(user, new UserDAO.messageCallback() {
+            
+            @Override
+            public void done(String message) {
+                System.out.println("entra");
+                System.out.println(message);
+                //print message
+            }
+        });
+        DataBaseManager.sleep(20);*/
+        String username = "mbampi"; //test
+        //function to get user by username
+        user_dao.findByUsername(username, new UserDAO.Callback() {
             @Override
             public void done(User user) {
+                System.out.println("entra");
                 System.out.println(user.getName());
-                System.out.println("look: " + user.getEmail());
-                System.out.println("the end");
+                System.out.println(user.getPassword());
+                //print User informations
             }
         });
         
-         System.out.println("wait...");
+        System.out.println("wait...");
     }
     
 

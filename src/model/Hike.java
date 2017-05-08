@@ -14,18 +14,18 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class Hike {
+    private Integer hike_id; // Primary Key
     private String name;
     private ArrayList<URL> images;
     private Double distance;
     private Time time;
     private CourseMap location;
-    private int rating;
-    private ArrayList<Review> reviews;
+    private Integer rating;
+    private ArrayList<Integer> reviews; // Foreign Key from Review
     private String season;
     private boolean camping;
     private boolean dog_friendly;
     private boolean public_transit;
-    //toilet deleted
 
     public Hike(String name, ArrayList<URL> images, Double distance, Time time, CourseMap location, String season, boolean camping, boolean dog_friendly, boolean public_transit) {
         this.name = name;
@@ -39,8 +39,4 @@ public class Hike {
         this.public_transit = public_transit;
     }
     
-    public void addReview(Review new_review){
-        this.rating = ( (this.rating*this.reviews.size()) + new_review.getRating() ) / (this.reviews.size()+1);
-        this.reviews.add(new_review);
-    }
 }

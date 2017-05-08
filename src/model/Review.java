@@ -12,12 +12,14 @@ import java.util.Date;
  * @author matheus
  */
 public class Review {
+    private Integer review_id;
     private User user;
-    private int rating;
+    private Integer rating;
     private String comment;
     private Date hike_date;
 
-    public Review(User user, int rating, String comment, Date hike_date) {
+    public Review(Integer review_id, User user, Integer rating, String comment, Date hike_date) {
+        this.review_id = review_id;
         this.user = user;
         this.rating = rating;
         this.comment = comment;
