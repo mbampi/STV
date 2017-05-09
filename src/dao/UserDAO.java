@@ -82,7 +82,7 @@ public class UserDAO {
         }); 
     }
     
-    /*      USER PROPERTIES       */
+    /*      USER COMPLETED HIKES       */
     
     public void addCompletedHike(CompletedHike completed_hike, String user_id, messageCallback callback){
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("users").child(user_id).child("completed_hikes");
@@ -107,6 +107,8 @@ public class UserDAO {
             }
         }); 
     }
+    
+    /*      USER WANTO TO DO HIKES       */
     
     public void addWantToDoHike(String want_to_do_hike_id, String user_id, messageCallback callback){
         DatabaseReference ref = DataBaseManager.getDataBaseReference().child("users").child(user_id).child("want_to_do_hikes");

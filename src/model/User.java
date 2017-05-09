@@ -19,6 +19,9 @@ public class User {
     private ArrayList<Integer> completed_hikes; //Foreign Key of CompletedHike
     private ArrayList<Integer> want_to_do_hikes; //Foreign Key of Hike
     
+    
+    /*      CONSTRUCTORS       */
+    
     //Necessary for FireBase data retrieving
     private User() {}
     
@@ -37,6 +40,8 @@ public class User {
         this.name = name;
     }
 
+    /*      GETTERS AND SETTERS       */
+    
     public String getEmail() {
         return email;
     }

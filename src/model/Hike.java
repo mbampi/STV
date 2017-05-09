@@ -25,7 +25,9 @@ public class Hike {
     private boolean public_transit;
     private String image;
     private ArrayList<String> reviews; // Foreign Key from Review (user_id)
-
+    
+    /*      CONSTRUCTORS       */
+    
     //Necessary for FireBase data retrieving
     private Hike(){}
     
@@ -78,6 +80,7 @@ public class Hike {
         this.image = image;
     }
     
+    /*      GETTERS AND SETTERS       */
 
     public String getHike_id() {
         return hike_id;

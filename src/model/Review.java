@@ -17,6 +17,8 @@ public class Review {
     private String comment;
     private Date hike_date;
 
+    /*      CONSTRUCTORS       */
+    
     //Necessary for FireBase data retrieving
     public Review(){}
     
@@ -34,6 +36,8 @@ public class Review {
         this.comment = comment;
         this.hike_date = hike_date;
     }
+    
+    /*      GETTERS AND SETTERS       */
 
     public String getUser() {
         return user;

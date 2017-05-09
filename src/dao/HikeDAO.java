@@ -113,7 +113,7 @@ public class HikeDAO {
         }); 
     }
     
-    /*      REVIEWS       */
+    /*      HIKE REVIEWS       */
     
     public void allReviews(String hike_id, hikeListCallback callback) {
         System.out.println("enterFind"); //test
