@@ -55,13 +55,6 @@ public class HikeDAO {
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("completeFind"); //test
                 DataSnapshot hike_data = snapshot.child("hikes").child(hike_id);
-                //Hike hike = hike_data.getValue(Hike.class);
-                String name = (String) hike_data.child("name").getValue();
-                String distance = (String) hike_data.child("distance").getValue();
-                String name = (String) hike_data.child("name").getValue();
-                Hike hike = new Hike(username, email, password, name);
-                
-                
                 Hike hike = hike_data.getValue(Hike.class);
                 if (callback != null) { //if completed
                     //send String message
@@ -80,7 +73,7 @@ public class HikeDAO {
     public void insertHike(Hike hike, messageCallback callback) {
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("hikes");
         System.out.println("enterInsert");
-        user_db.child(hike.getHike_id()).setValue(new Hike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getLocation(), hike.getRating(), hike.getSeason(), hike.isCamping(), hike.isDog_friendly(), hike.isPublic_transit(), hike.getImage()), new DatabaseReference.CompletionListener() {
+        user_db.child(hike.getHike_id()).setValue(new Hike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getLevel(), hike.getLocation(), hike.getRating(), hike.getSeason(), hike.isCamping(), hike.isDog_friendly(), hike.isPublic_transit(), hike.getImage()), new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;

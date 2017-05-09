@@ -19,6 +19,8 @@ public class User {
     private ArrayList<Integer> completed_hikes; //Foreign Key of CompletedHike
     private ArrayList<Integer> want_to_do_hikes; //Foreign Key of Hike
     
+    private User() {}
+    
     public User(String username, String email, String password, String name) {
         this.username = username;
         this.email = email;

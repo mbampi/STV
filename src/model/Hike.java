@@ -26,8 +26,9 @@ public class Hike {
     private String image;
     private ArrayList<String> reviews; // Foreign Key from Review (user_id)
 
+    private Hike(){}
+    
     //Complete
-
     public Hike(String hike_id, String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image, ArrayList<String> reviews) {
         this.hike_id = hike_id;
         this.name = name;
@@ -91,6 +92,10 @@ public class Hike {
 
     public String getTime() {
         return time;
+    }
+
+    public String getLevel() {
+        return level;
     }
 
     public String getLocation() {

@@ -26,12 +26,8 @@ public class UserDAO {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("datachange");
-                DataSnapshot user_data = snapshot.child("users").child(username);
-                String email = (String) user_data.child("email").getValue();
-                String password = (String) user_data.child("password").getValue();
-                String name = (String) user_data.child("name").getValue();
-                User user = new User(username, email, password, name);
-                //User user = user_data.getValue(User.class);
+                DataSnapshot ref = snapshot.child("users").child(username);
+                User user = ref.getValue(User.class);
                 if (callback != null) { //if completed
                     callback.done(user);
                 }
