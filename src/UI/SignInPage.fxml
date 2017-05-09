@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="1088.0" fitWidth="1962.0" layoutX="-23.0" layoutY="-53.0">
          <image>
-            <Image url="@../../../../../Desktop/Web&amp;App_class/1705/kalen-emsley-100237.jpg" />
+            <Image url="@../img/background.jpg" />
          </image>
       </ImageView>
       <TabPane layoutX="997.0" layoutY="316.0" prefHeight="644.0" prefWidth="438.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="997.0" AnchorPane.topAnchor="208.0">
@@ -72,7 +72,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Button fx:id="btnSignIn" layoutX="168.0" layoutY="392.0" mnemonicParsing="false" text="Sign In" onAction="#handleButtonAction">
+                        <Button fx:id="btnSignIn" layoutX="168.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Sign In">
                            <font>
                               <Font size="24.0" />
                            </font>
