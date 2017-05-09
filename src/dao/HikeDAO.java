@@ -35,7 +35,6 @@ public class HikeDAO {
                     hikeList.add(hike);
                 }
                 if (callback != null) { //if completed
-                    //send String message
                     callback.done(hikeList);
                 }
             }
@@ -96,19 +95,22 @@ public class HikeDAO {
         });
     }
     
-    public void deleteHike(String hike_id, messageCallback callback) {
-        DatabaseReference db = DataBaseManager.getDataBaseReference().child("hikes");
-        db.equalTo(hike_id).addListenerForSingleValueEvent(new ValueEventListener() {
+    public void deleteHike (String hike_id, UserDAO.messageCallback callback){
+        DatabaseReference ref = DataBaseManager.getDataBaseReference().child("hikes");
+        ref.child(hike_id).removeValue(new DatabaseReference.CompletionListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                dataSnapshot.getRef().setValue(null);
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                String message;
+                if (databaseError != null) {
+                   message = "Data could not be deleted " + databaseError.getMessage();
+                } else {
+                    message = "Deleted successfully.";
+                }
+                if (callback != null) { //if completed
+                    callback.done(message);
+                }
             }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("OnCancelled deleteReview: " +databaseError.toString());
-            }
-        });
+        }); 
     }
     
     public void insertReview(Review review, String hike_id, messageCallback callback) {

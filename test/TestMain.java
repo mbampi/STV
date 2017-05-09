@@ -1,6 +1,5 @@
 
 import dao.DataBaseManager;
-import dao.HikeDAO;
 import dao.UserDAO;
 import java.util.Scanner;
 import model.User;
@@ -19,33 +18,50 @@ public class TestMain {
     
     
     public static void main(String[] args) {
-        // ------    CONFIG     ------
+        
+        
+        
+        
+        
+        // ------------    CONFIG     ------------
         User user = new User("mbampi", "matt@email.com", "123123", "Matheus D Bampi");
-        //User user1 = new User("mario", "mario@email.com", "234234", "Mario Kart");
+        User user1 = new User("mario", "mario@email.com", "234234", "Mario Kart");
         UserDAO user_dao = new UserDAO();
         DataBaseManager.createDataBase();
         
         Scanner scan = new Scanner(System.in);
+        // ------------    end CONFIG     ------------
         
         
-        // ------    end CONFIG     ------
         
         
-        // ------    SIGNUP     ------
+        
+        // ------------    SIGNUP     ------------
         user_dao.insertUser(user, new UserDAO.messageCallback() {
             @Override
             public void done(String message) {
                 System.out.println(message);
-                //print message
             }
         });
-        // ------    end SIGNUP     ------
+        // ------------    end SIGNUP     ------------
+        // ------------    SIGNUP     ------------
+        user_dao.insertUser(user1, new UserDAO.messageCallback() {
+            @Override
+            public void done(String message) {
+                System.out.println(message);
+            }
+        });
+        // ------------    end SIGNUP     ------------
         
-        // ------    LOGIN     ------
+        
+        
+        
+        // ------------    LOGIN     ------------
         System.out.println("username: ");
         String username = scan.next().trim();
         System.out.println("password: ");
         String password = scan.next();
+        
         user_dao.getUserByUsername(username, new UserDAO.userCallback() {
             @Override
             public void done(User user) {
@@ -56,20 +72,32 @@ public class TestMain {
                 }
             }
         });
-        // ------    end LOGIN     ------
+        // ------------    end LOGIN     ------------
         
         
-        // ------    DELETE ACCOUNT     ------
+        
+        
+        
+        // ------------    DELETE ACCOUNT     ------------
         System.out.println("delete username: ");
         username = scan.next().trim();
         user_dao.deleteUser(username, new UserDAO.messageCallback() {
             @Override
             public void done(String message) {
                 System.out.println(message);
-                //print message
             }
         });
-        // ------    end DELETE ACCOUNT     ------
+        // ------------    end DELETE ACCOUNT     ------------
+        // ------------    DELETE ACCOUNT     ------------
+        System.out.println("delete username: ");
+        username = scan.next().trim();
+        user_dao.deleteUser(username, new UserDAO.messageCallback() {
+            @Override
+            public void done(String message) {
+                System.out.println(message);
+            }
+        });
+        // ------------    end DELETE ACCOUNT     ------------
         
         System.out.println("wait...");
     }

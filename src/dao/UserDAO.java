@@ -44,8 +44,8 @@ public class UserDAO {
     }
     
     public void insertUser(User user, messageCallback callback){
-        DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("users");
-        user_db.child(user.getUsername()).setValue(new User(user.getEmail(), user.getPassword(), user.getName()), new DatabaseReference.CompletionListener() {
+        DatabaseReference ref = DataBaseManager.getDataBaseReference().child("users");
+        ref.child(user.getUsername()).setValue(new User(user.getEmail(), user.getPassword(), user.getName()), new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;
@@ -65,8 +65,8 @@ public class UserDAO {
     }
     
     public void deleteUser(String username, messageCallback callback){
-        DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("users");
-        user_db.child(username).removeValue(new DatabaseReference.CompletionListener() {
+        DatabaseReference ref = DataBaseManager.getDataBaseReference().child("users");
+        ref.child(username).removeValue(new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;

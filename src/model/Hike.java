@@ -5,7 +5,6 @@
  */
 package model;
 
-import java.sql.Time;
 import java.util.ArrayList;
 
 /**
@@ -15,8 +14,8 @@ import java.util.ArrayList;
 public class Hike {
     private String hike_id; // Primary Key
     private String name;
-    private Double distance;
-    private Time time;
+    private String distance;
+    private String time;
     private String location;
     private Integer rating;
     private String season;
@@ -26,7 +25,24 @@ public class Hike {
     private String image;
     private ArrayList<String> reviews; // Foreign Key from Review (user_id)
 
-    public Hike(String hike_id, String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+    //Complete
+    public Hike(String hike_id, String name, String distance, String time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image, ArrayList<String> reviews) {
+        this.hike_id = hike_id;
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.location = location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+        this.reviews = reviews;
+    }
+
+    // Without ArrayList<String> reviews;
+    public Hike(String hike_id, String name, String distance, String time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
         this.hike_id = hike_id;
         this.name = name;
         this.distance = distance;
@@ -40,7 +56,8 @@ public class Hike {
         this.image = image;
     }
     
-    public Hike(String name, Double distance, Time time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+    // Without String hike_id and ArrayList<String> reviews;
+    public Hike(String name, String distance, String time, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
         this.name = name;
         this.distance = distance;
         this.time = time;
@@ -61,11 +78,11 @@ public class Hike {
         return name;
     }
 
-    public Double getDistance() {
+    public String getDistance() {
         return distance;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
