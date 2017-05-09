@@ -21,7 +21,7 @@ public class UserDAO {
     
     public void getUserByUsername(String username, userCallback callback){
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
-        DataBaseManager.sleep(40);   // SLEEEEEEEEEEEEEP
+        //DataBaseManager.sleep(40);   // SLEEEEEEEEEEEEEP
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {

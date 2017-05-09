@@ -55,8 +55,14 @@ public class HikeDAO {
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("completeFind"); //test
                 DataSnapshot hike_data = snapshot.child("hikes").child(hike_id);
+                //Hike hike = hike_data.getValue(Hike.class);
+                String name = (String) hike_data.child("name").getValue();
+                String distance = (String) hike_data.child("distance").getValue();
+                String name = (String) hike_data.child("name").getValue();
+                Hike hike = new Hike(username, email, password, name);
+                
+                
                 Hike hike = hike_data.getValue(Hike.class);
-
                 if (callback != null) { //if completed
                     //send String message
                     System.out.println("name:" + hike.getName()); //test
