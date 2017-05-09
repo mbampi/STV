@@ -116,21 +116,18 @@ public class HikeDAO {
     public void insertReview(Review review, String hike_id, messageCallback callback) {
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("hikes");
         System.out.println("enterInsert");
-        user_db.child(hike_id).setValue(review.getUser(), new Review(review.getRating(), review.getComment(), review.getHike_date()), new DatabaseReference.CompletionListener() {
+        user_db.child(hike_id).child("reviews").setValue(review.getUser(), new Review(review.getRating(), review.getComment(), review.getHike_date()), new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;
                 System.out.println("completeInsert");
                 if (databaseError != null) {
-                    //Error message error
                     message = "Data could not be saved " + databaseError.getMessage();
                 } else {
-                    //Hike saved successfully
                     message = "Data saved successfully.";
                 }
 
                 if (callback != null) { //if completed
-                    //send String message
                     callback.done(message);
                 }
             }
@@ -138,18 +135,21 @@ public class HikeDAO {
     }
     
     public void deleteReview(String username, String hike_id, messageCallback callback) {
-        DatabaseReference db = DataBaseManager.getDataBaseReference().child("hikes");
-        db.child(hike_id).child("reviews").equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference ref = DataBaseManager.getDataBaseReference().child("hikes");
+        ref.child(hike_id).child("reviews").child(username).removeValue(new DatabaseReference.CompletionListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                dataSnapshot.getRef().setValue(null);
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                String message;
+                if (databaseError != null) {
+                   message = "Data could not be deleted " + databaseError.getMessage();
+                } else {
+                    message = "Deleted successfully.";
+                }
+                if (callback != null) { //if completed
+                    callback.done(message);
+                }
             }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("OnCancelled deleteReview: " +databaseError.toString());
-            }
-        });
+        }); 
     }
 
     public interface hikeCallback {
