@@ -43,12 +43,12 @@ public abstract class DataBaseManager {
         }
     }
     
-    public static void sleep(int time){
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException ex) {
-            System.out.println("InterruptedException in DataBaseManager.java");
-        }
-    }
+//    public static void sleep(int time){
+//        try {
+//            Thread.sleep(time);
+//        } catch (InterruptedException ex) {
+//            System.out.println("InterruptedException in DataBaseManager.java");
+//        }
+//    }
     
 }

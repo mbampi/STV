@@ -24,7 +24,7 @@ public class HikeDAO {
         System.out.println("enterFind"); //test
         List<Hike> hikeList = new ArrayList<>();
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("completeFind"); //test
@@ -46,11 +46,10 @@ public class HikeDAO {
         });
     }
     
-    
     public void findByHike_id(String hike_id, hikeCallback callback) {
         System.out.println("enterFind"); //test
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("completeFind"); //test
@@ -110,6 +109,32 @@ public class HikeDAO {
                 }
             }
         }); 
+    }
+    
+    public void allReviews(String hike_id, hikeListCallback callback) {
+        System.out.println("enterFind"); //test
+        List<Hike> hikeList = new ArrayList<>();
+        DatabaseReference ref = DataBaseManager.getDataBaseReference();
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                System.out.println("completeFind"); //test
+                DataSnapshot hike_data = snapshot.child("hikes");
+                hikeList.clear();
+                for (DataSnapshot postSnapshot : hike_data.getChildren()) {
+                    Hike hike = postSnapshot.getValue(Hike.class);
+                    hikeList.add(hike);
+                }
+                if (callback != null) { //if completed
+                    callback.done(hikeList);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError de) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
     }
     
     public void insertReview(Review review, String hike_id, messageCallback callback) {
