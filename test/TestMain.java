@@ -1,5 +1,6 @@
 
 import dao.DataBaseManager;
+import dao.HikeDAO;
 import dao.UserDAO;
 import model.User;
 
@@ -17,9 +18,10 @@ public class TestMain {
     
     
     public static void main(String[] args) {
-        User user = new User("mbampi", "matt@email.com", "123123", "Matheus D Bampi");
+        //User user = new User("mbampi", "matt@email.com", "123123", "Matheus D Bampi");
         //User user1 = new User("mario", "mario@email.com", "234234", "Mario Kart");
-        UserDAO user_dao =  new UserDAO();
+        UserDAO user_dao = new UserDAO();
+        HikeDAO hike_dao = new HikeDAO();
         DataBaseManager.createDataBase();
         /*
         //function to insert user
