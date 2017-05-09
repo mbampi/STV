@@ -19,6 +19,8 @@ import model.User;
  */
 public class UserDAO {
     
+    /*      USER       */
+    
     public void getUserByUsername(String username, userCallback callback){
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -80,6 +82,8 @@ public class UserDAO {
         }); 
     }
     
+    /*      USER PROPERTIES       */
+    
     public void addCompletedHike(CompletedHike completed_hike, String user_id, messageCallback callback){
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("users").child(user_id).child("completed_hikes");
         System.out.println("enterInsert"); //test
@@ -127,6 +131,8 @@ public class UserDAO {
             }
         }); 
     }
+    
+    /*      CALLBACKS       */
     
     public interface userCallback {
         void done(User user);

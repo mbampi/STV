@@ -20,6 +20,8 @@ import model.Review;
  */
 public class HikeDAO {
 
+    /*      HIKES       */
+    
     public void allHikes(hikeListCallback callback) {
         System.out.println("enterFind"); //test
         List<Hike> hikeList = new ArrayList<>();
@@ -111,6 +113,8 @@ public class HikeDAO {
         }); 
     }
     
+    /*      REVIEWS       */
+    
     public void allReviews(String hike_id, hikeListCallback callback) {
         System.out.println("enterFind"); //test
         List<Hike> hikeList = new ArrayList<>();
@@ -176,6 +180,8 @@ public class HikeDAO {
         }); 
     }
 
+    /*      CALLBACKS       */
+    
     public interface hikeCallback {
         void done(Hike hike);
     }

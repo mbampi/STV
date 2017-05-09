@@ -26,6 +26,7 @@ public class Hike {
     private String image;
     private ArrayList<String> reviews; // Foreign Key from Review (user_id)
 
+    //Necessary for FireBase data retrieving
     private Hike(){}
     
     //Complete

@@ -17,6 +17,10 @@ public class Review {
     private String comment;
     private Date hike_date;
 
+    //Necessary for FireBase data retrieving
+    public Review(){}
+    
+    //Complete
     public Review(String user, Integer rating, String comment, Date hike_date) {
         this.user = user;
         this.rating = rating;
@@ -24,6 +28,7 @@ public class Review {
         this.hike_date = hike_date;
     }
     
+    //Without user
     public Review(Integer rating, String comment, Date hike_date) {
         this.rating = rating;
         this.comment = comment;
