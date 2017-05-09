@@ -5,11 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.layout.StackPane;
-
-import static javafx.application.Application.launch;
 
 /**
  * Created by madoka on 2017/05/09.
