@@ -48,7 +48,7 @@ public class HikeDAO {
         });
     }
     
-    public void findByHike_id(String hike_id, hikeCallback callback) {
+    public void getHikeByHike_id(String hike_id, hikeCallback callback) {
         System.out.println("enterFind"); //test
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {

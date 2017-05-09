@@ -108,12 +108,35 @@ public class UserDAO {
         }); 
     }
     
-    /*      USER WANTO TO DO HIKES       */
+    /*      USER WANT TO DO HIKES       */
     
     public void addWantToDoHike(String want_to_do_hike_id, String user_id, messageCallback callback){
         DatabaseReference ref = DataBaseManager.getDataBaseReference().child("users").child(user_id).child("want_to_do_hikes");
         System.out.println("enterInsert"); //test
         ref.setValue(want_to_do_hike_id, true, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                String message;
+                System.out.println("onComplete");//test
+                if (databaseError != null) {
+                    //Error message error
+                   message = "Data could not be saved " + databaseError.getMessage();
+                } else {
+                    //User saved successfully
+                    message = "Data saved successfully.";
+                }
+                
+                if (callback != null) { //if completed
+                    //send String message
+                    callback.done(message);
+                }
+            }
+        }); 
+    }
+    
+    public void removeWantToDoHike(String want_to_do_hike_id, String user_id, messageCallback callback){
+        DatabaseReference ref = DataBaseManager.getDataBaseReference().child("users").child(user_id).child("want_to_do_hikes");
+        ref.child(want_to_do_hike_id).removeValue(new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;
