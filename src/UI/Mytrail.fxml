@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.23" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1078.0" prefWidth="455.0" style="-fx-background-color: #16A085;">
+               <children>
+                  <Text fill="WHITE" layoutX="142.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uset Name">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="134.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail adress">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Hyperlink layoutX="70.0" layoutY="476.0" text="Edit your profile" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="101.0" layoutY="546.0" text="Post review" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Hyperlink>
+                  <Pane layoutX="143.0" layoutY="618.0" prefHeight="420.0" prefWidth="437.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="618.0">
+                     <children>
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="148.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="295.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="1.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="148.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="295.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="1.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="148.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="295.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="36.0" layoutY="23.0" text="Trail Name">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="81.0" text="Location">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="43.0" layoutY="149.0" prefHeight="510.0" prefWidth="1388.0">
+                     <children>
+                        <Pane layoutX="869.0" layoutY="1.0" prefHeight="509.0" prefWidth="524.0" style="-fx-background-color: #2C3E50;">
+                           <children>
+                              <Label layoutX="73.0" layoutY="66.0" text="6 June 2017" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="73.0" layoutY="30.0" text="DATE" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="82.0" layoutY="210.0" text="0.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="74.0" layoutY="178.0" text="Time" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="WHITE" layoutX="168.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hour">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="732.0" layoutY="56.0" text="0.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="741.0" layoutY="106.0" text="Elevation" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="WHITE" layoutX="818.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/ml">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="73.0" layoutY="358.0" text="★★★★★" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="73.0" layoutY="322.0" text="Rating" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="36.0" right="36.0" />
+                     </opaqueInsets>
+                  </Pane>
+                  <Label layoutX="36.0" layoutY="713.0" text="Review">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="39.0" layoutY="765.0" strokeType="OUTSIDE" strokeWidth="0.0" text="While the trail is rated as easy, there is a challenge creek " wrappingWidth="7570.1328125" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="800.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="204.0" fitWidth="360.0" layoutX="29.0" layoutY="846.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0" />
+                  <ImageView fitHeight="204.0" fitWidth="360.0" layoutX="396.0" layoutY="846.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="396.0" />
+                  <ImageView fitHeight="204.0" fitWidth="360.0" layoutX="760.0" layoutY="846.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
