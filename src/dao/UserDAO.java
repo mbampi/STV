@@ -18,24 +18,21 @@ import model.User;
  * @author matheus
  */
 public class UserDAO {
-
+    
     public void getUserByUsername(String username, userCallback callback){
-        System.out.println("enterFind"); //test
         DatabaseReference ref = DataBaseManager.getDataBaseReference();
+        DataBaseManager.sleep(40);   // SLEEEEEEEEEEEEEP
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                System.out.println("completeFind"); //test
+                System.out.println("datachange");
                 DataSnapshot user_data = snapshot.child("users").child(username);
-//                String email = (String) user_data.child("email").getValue();
-//                String password = (String) user_data.child("password").getValue();
-//                String name = (String) user_data.child("name").getValue();
-//                User user = new User(username, email, password, name);
-                User user = user_data.getValue(User.class);
-                
+                String email = (String) user_data.child("email").getValue();
+                String password = (String) user_data.child("password").getValue();
+                String name = (String) user_data.child("name").getValue();
+                User user = new User(username, email, password, name);
+                //User user = user_data.getValue(User.class);
                 if (callback != null) { //if completed
-                    //send String message
-                    System.out.println("name:"+user.getName()); //test
                     callback.done(user);
                 }
             }
@@ -48,12 +45,10 @@ public class UserDAO {
     
     public void insertUser(User user, messageCallback callback){
         DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("users");
-        System.out.println("enterInsert"); //test
         user_db.child(user.getUsername()).setValue(new User(user.getEmail(), user.getPassword(), user.getName()), new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;
-                System.out.println("completeInsert");//test
                 if (databaseError != null) {
                     //Error message error
                    message = "Data could not be saved " + databaseError.getMessage();
@@ -61,7 +56,27 @@ public class UserDAO {
                     //User saved successfully
                     message = "Data saved successfully.";
                 }
-                
+                if (callback != null) { //if completed
+                    //send String message
+                    callback.done(message);
+                }
+            }
+        }); 
+    }
+    
+    public void deleteUser(String username, messageCallback callback){
+        DatabaseReference user_db = DataBaseManager.getDataBaseReference().child("users");
+        user_db.child(username).removeValue(new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                String message;
+                if (databaseError != null) {
+                    //Error message error
+                   message = "Data could not be deleted " + databaseError.getMessage();
+                } else {
+                    //User saved successfully
+                    message = "Deleted successfully.";
+                }
                 if (callback != null) { //if completed
                     //send String message
                     callback.done(message);
@@ -82,7 +97,7 @@ public class UserDAO {
                     //Error message error
                    message = "Data could not be saved " + databaseError.getMessage();
                 } else {
-                    //User saved successfully
+                    //Hike saved successfully
                     message = "Data saved successfully.";
                 }
                 
@@ -101,7 +116,7 @@ public class UserDAO {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 String message;
-                System.out.println("completeInsert");//test
+                System.out.println("onComplete");//test
                 if (databaseError != null) {
                     //Error message error
                    message = "Data could not be saved " + databaseError.getMessage();
