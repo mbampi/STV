@@ -5,8 +5,6 @@
  */
 package model;
 
-import java.net.URL;
-import java.sql.Time;
 import java.util.ArrayList;
 
 /**
@@ -14,29 +12,126 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class Hike {
-    private Integer hike_id; // Primary Key
+    private String hike_id; // Primary Key
     private String name;
-    private ArrayList<URL> images;
-    private Double distance;
-    private Time time;
-    private CourseMap location;
+    private String distance;
+    private String time;
+    private String level;
+    private String location;
     private Integer rating;
-    private ArrayList<Integer> reviews; // Foreign Key from Review
     private String season;
     private boolean camping;
     private boolean dog_friendly;
     private boolean public_transit;
-
-    public Hike(String name, ArrayList<URL> images, Double distance, Time time, CourseMap location, String season, boolean camping, boolean dog_friendly, boolean public_transit) {
+    private String image;
+    private ArrayList<String> reviews; // Foreign Key from Review (user_id)
+    
+    /*      CONSTRUCTORS       */
+    
+    //Necessary for FireBase data retrieving
+    private Hike(){}
+    
+    //Complete
+    public Hike(String hike_id, String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image, ArrayList<String> reviews) {
+        this.hike_id = hike_id;
         this.name = name;
-        this.images = images;
         this.distance = distance;
         this.time = time;
+        this.level = level;
         this.location = location;
+        this.rating = rating;
         this.season = season;
         this.camping = camping;
         this.dog_friendly = dog_friendly;
         this.public_transit = public_transit;
+        this.image = image;
+        this.reviews = reviews;
+    }
+    
+
+    // Without ArrayList<String> reviews;
+    public Hike(String hike_id, String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+        this.hike_id = hike_id;
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.level = level;
+        this.location = location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+    }
+
+    // Without String hike_id and ArrayList<String> reviews;
+    public Hike(String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.level = level;
+        this.location = location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+    }
+    
+    /*      GETTERS AND SETTERS       */
+
+    public String getHike_id() {
+        return hike_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public String getSeason() {
+        return season;
+    }
+
+    public boolean isCamping() {
+        return camping;
+    }
+
+    public boolean isDog_friendly() {
+        return dog_friendly;
+    }
+
+    public boolean isPublic_transit() {
+        return public_transit;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public ArrayList<String> getReviews() {
+        return reviews;
     }
     
 }

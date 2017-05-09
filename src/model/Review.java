@@ -12,22 +12,47 @@ import java.util.Date;
  * @author matheus
  */
 public class Review {
-    private Integer review_id;
-    private User user;
+    private String user; //Foreign Key from User // Primary Key
     private Integer rating;
     private String comment;
     private Date hike_date;
 
-    public Review(Integer review_id, User user, Integer rating, String comment, Date hike_date) {
-        this.review_id = review_id;
+    /*      CONSTRUCTORS       */
+    
+    //Necessary for FireBase data retrieving
+    public Review(){}
+    
+    //Complete
+    public Review(String user, Integer rating, String comment, Date hike_date) {
         this.user = user;
         this.rating = rating;
         this.comment = comment;
         this.hike_date = hike_date;
     }
+    
+    //Without user
+    public Review(Integer rating, String comment, Date hike_date) {
+        this.rating = rating;
+        this.comment = comment;
+        this.hike_date = hike_date;
+    }
+    
+    /*      GETTERS AND SETTERS       */
 
-    public int getRating() {
+    public String getUser() {
+        return user;
+    }
+
+    public Integer getRating() {
         return rating;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public Date getHike_date() {
+        return hike_date;
     }
     
 }
