@@ -1,4 +1,4 @@
-package UI;
+package STV.src.UI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -12,65 +12,32 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+//import STV.src.img.*;
 
 /**
  * Created by madoka on 2017/05/09.
  */
 public class SignInController extends AnchorPane implements Initializable {
 
-    //create button signIn
-    private Button btnSignIn;
-
-
-    /** display label text */
-    private final String labelText;
-
-    /** label */
     @FXML
-    private Label label;
-
-    /**
-     *constructor
-     * @param labelText
-     */
-    public SignInController(String labelText) {
-        this.labelText = labelText;
-
-        loadFXML();
-    }
-
-    /**
-     * FXMLのロード
-     */
-    private void loadFXML() {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignInPage.fxml"));
-        fxmlLoader.setRoot(this);
-
-        // Set controller by myself
-        fxmlLoader.setController(this);
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-    }
+    //  fx:id="btnSignIn"
+    private Button btnSignIn;// Value injected by FXMLLoader
 
 
-
+    @Override // This method is called by the FXMLLoader when initialization is complete
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         assert btnSignIn != null : "fx:id=\"btnSignIn\" was not injected: check your FXML file 'SignInPage.fxml'.";
+
+        // initialize your logic here: all @FXML variables will have been injected
 
         btnSignIn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
-            //go to next page
             public void handle(ActionEvent event) {
-                //SignIn.getInstance().sendMainPageController("MainPage");
-                System.out.println("Hello!");
+                System.out.println("test");
             }
         });
 
     }
+
 }
