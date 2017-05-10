@@ -24,7 +24,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
+//            Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
+            Parent root = FXMLLoader.load(Main.class.getResource("Detail.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("STV");

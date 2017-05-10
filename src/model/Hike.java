@@ -17,7 +17,8 @@ public class Hike {
     private String distance;
     private String time;
     private String level;
-    private String location;
+    private String location_name;
+    private String geo_location;
     private Integer rating;
     private String season;
     private boolean camping;
@@ -31,54 +32,14 @@ public class Hike {
     //Necessary for FireBase data retrieving
     private Hike(){}
     
-    //Complete
-    public Hike(String hike_id, String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image, ArrayList<String> reviews) {
-        this.hike_id = hike_id;
-        this.name = name;
-        this.distance = distance;
-        this.time = time;
-        this.level = level;
-        this.location = location;
-        this.rating = rating;
-        this.season = season;
-        this.camping = camping;
-        this.dog_friendly = dog_friendly;
-        this.public_transit = public_transit;
-        this.image = image;
-        this.reviews = reviews;
-    }
+    //Complete 
     
 
     // Without ArrayList<String> reviews;
-    public Hike(String hike_id, String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
-        this.hike_id = hike_id;
-        this.name = name;
-        this.distance = distance;
-        this.time = time;
-        this.level = level;
-        this.location = location;
-        this.rating = rating;
-        this.season = season;
-        this.camping = camping;
-        this.dog_friendly = dog_friendly;
-        this.public_transit = public_transit;
-        this.image = image;
-    }
+
 
     // Without String hike_id and ArrayList<String> reviews;
-    public Hike(String name, String distance, String time, String level, String location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
-        this.name = name;
-        this.distance = distance;
-        this.time = time;
-        this.level = level;
-        this.location = location;
-        this.rating = rating;
-        this.season = season;
-        this.camping = camping;
-        this.dog_friendly = dog_friendly;
-        this.public_transit = public_transit;
-        this.image = image;
-    }
+
     
     /*      GETTERS AND SETTERS       */
 
