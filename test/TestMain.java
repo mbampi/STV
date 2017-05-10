@@ -2,11 +2,8 @@
 import dao.DataBaseManager;
 import dao.HikeDAO;
 import dao.UserDAO;
+import java.util.List;
 import java.util.Scanner;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import model.Hike;
 import model.User;
 

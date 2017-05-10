@@ -5,10 +5,13 @@
  */
 package UI;
 
+import dao.HikeDAO;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
+import static javafx.collections.FXCollections.observableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -20,6 +23,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
+import model.Hike;
 
 /**
  * FXML Controller class
@@ -79,6 +83,15 @@ public class SearchPageController implements Initializable {
     //search
     private void searchClicked(ActionEvent event) {
         String search = search_field.getText();
+        HikeDAO hike_dao = new HikeDAO();
+        hike_dao.allHikes(new HikeDAO.hikeListCallback(){
+            @Override
+            public void done(List<Hike> hikeList) {
+                
+                
+                
+            }
+        }); 
     }
 
     @FXML
