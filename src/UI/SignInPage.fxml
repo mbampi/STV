@@ -51,8 +51,8 @@
                         </Button>
                         <TextField fx:id="signUpUserName_field" layoutX="28.0" layoutY="54.0" prefHeight="27.0" prefWidth="380.0" />
                         <TextField fx:id="signUpEmail_field" layoutX="28.0" layoutY="134.0" prefHeight="27.0" prefWidth="380.0" />
-                        <TextField fx:id="signUpPassword_field" layoutX="28.0" layoutY="224.0" prefHeight="27.0" prefWidth="380.0" />
-                        <TextField fx:id="signUpConfirmPassword_field" layoutX="28.0" layoutY="314.0" prefHeight="27.0" prefWidth="380.0" />
+                        <PasswordField fx:id="signUpPassword_field" layoutX="30.0" layoutY="225.0" prefHeight="27.0" prefWidth="380.0" />
+                        <PasswordField fx:id="signUpConfirmPassword_field" layoutX="28.0" layoutY="315.0" prefHeight="27.0" prefWidth="380.0" />
                      </children>
                   </AnchorPane>
             </content>
