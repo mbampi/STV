@@ -33,16 +33,61 @@ public class Hike {
     private Hike(){}
     
     //Complete 
+    public Hike(String hike_id, String name, String distance, String time, String level, String location_name, String geo_location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image, ArrayList<String> reviews) {
+        this.hike_id = hike_id;
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.level = level;
+        this.location_name = location_name;
+        this.geo_location = geo_location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+        this.reviews = reviews;
+    }
     
 
     // Without ArrayList<String> reviews;
-
+    public Hike(String hike_id, String name, String distance, String time, String level, String location_name, String geo_location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+        this.hike_id = hike_id;
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.level = level;
+        this.location_name = location_name;
+        this.geo_location = geo_location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+    }
 
     // Without String hike_id and ArrayList<String> reviews;
 
+    public Hike(String name, String distance, String time, String level, String location_name, String geo_location, Integer rating, String season, boolean camping, boolean dog_friendly, boolean public_transit, String image) {
+        this.name = name;
+        this.distance = distance;
+        this.time = time;
+        this.level = level;
+        this.location_name = location_name;
+        this.geo_location = geo_location;
+        this.rating = rating;
+        this.season = season;
+        this.camping = camping;
+        this.dog_friendly = dog_friendly;
+        this.public_transit = public_transit;
+        this.image = image;
+    }
     
-    /*      GETTERS AND SETTERS       */
-
+    
+    /*      GETTERS       */
+    
     public String getHike_id() {
         return hike_id;
     }
@@ -63,8 +108,12 @@ public class Hike {
         return level;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLocation_name() {
+        return location_name;
+    }
+
+    public String getGeo_location() {
+        return geo_location;
     }
 
     public Integer getRating() {
