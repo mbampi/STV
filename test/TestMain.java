@@ -130,7 +130,33 @@ public class TestMain {
     }
     
     
+    //  ----------      GOOGLEMAPTEST       ----------
     
     
-
+//    public class Main extends Application {
+//        private Scene scene;
+//        @Override
+//        public void start(Stage primaryStage) throws Exception{
+//    //        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+//    //        primaryStage.setTitle("Hello World");
+//    //        primaryStage.setScene(new Scene(root, 300, 275));
+//    //        primaryStage.show();
+//
+//
+//
+//
+//            WebView browser = new WebView();
+//            WebEngine webEngine = browser.getEngine();
+//            String start = "";
+//            String end = "trailway";
+//            webEngine.load("https://www.google.ca/maps/dir/"+start+"/"+end+"?hl=en&hl=en");
+//            scene = new Scene(browser,750,500, Color.web("#666970"));
+//            primaryStage.setScene(scene);
+//            scene.getStylesheets().add("webviewsample/BrowserToolbar.css");
+//            primaryStage.show();
+//        }
+//        public static void main(String[] args) {
+//            launch(args);
+//        }
+//    }
 }
