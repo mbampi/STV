@@ -16,8 +16,8 @@ public class User {
     private String email;
     private String password;
     private String name;
-    private ArrayList<Integer> completed_hikes; //Foreign Key of CompletedHike
-    private ArrayList<Integer> want_to_do_hikes; //Foreign Key of Hike
+    private ArrayList<String> completed_hikes; //Foreign Key of CompletedHike
+    private ArrayList<String> want_to_do_hikes; //Foreign Key of Hike
     
     
     /*      CONSTRUCTORS       */
