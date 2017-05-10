@@ -5,7 +5,6 @@
  */
 package model;
 
-import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -15,15 +14,15 @@ import java.util.Date;
 public class CompletedHike {
     private String hike; // Foreign Key from Hike
     private Date date;
-    private Time time;
+    private String time;
 
-    public CompletedHike(String hike, Date date, Time time) {
+    public CompletedHike(String hike, Date date, String time) {
         this.hike = hike;
         this.date = date;
         this.time = time;
     }
     
-    public CompletedHike(Date date, Time time) {
+    public CompletedHike(Date date, String time) {
         this.date = date;
         this.time = time;
     }
@@ -36,7 +35,7 @@ public class CompletedHike {
         return date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
