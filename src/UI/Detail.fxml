@@ -15,15 +15,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1910.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1500.0" prefWidth="1910.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1920.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1506.0" prefWidth="1920.0">
          <children>
             <SplitPane dividerPositions="0.10018552875695733" layoutX="701.0" layoutY="409.0" orientation="VERTICAL" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #2C3E50;">
                      <children>
-                        <MenuBar layoutX="552.0" layoutY="1.0" AnchorPane.rightAnchor="0.0">
+                        <MenuBar fx:id="btnMypage" layoutX="552.0" layoutY="1.0" AnchorPane.rightAnchor="0.0">
                           <menus>
                             <Menu mnemonicParsing="false" text="My page">
                               <items>
@@ -40,7 +40,7 @@
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="952.0" prefWidth="1920.0">
                                  <children>
-                                    <ImageView fitHeight="350.0" fitWidth="1980.0" layoutX="90.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <ImageView fx:id="Header" fitHeight="350.0" fitWidth="1980.0" layoutX="90.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     <Label layoutX="26.0" layoutY="358.0" text="TrailName">
                                        <font>
                                           <Font size="26.0" />
@@ -57,10 +57,10 @@
                                             <tabs>
                                               <Tab text="Map">
                                                 <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="400.0" />
+                                                  <AnchorPane fx:id="Map" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="400.0" />
                                                 </content>
                                               </Tab>
-                                              <Tab text="From here">
+                                              <Tab fx:id="Map02" text="From here">
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                                 </content>
@@ -138,7 +138,7 @@
                                           </Text>
                                        </children>
                                     </Pane>
-                                    <Text layoutX="26.0" layoutY="1021.46875" strokeType="OUTSIDE" strokeWidth="0.0" text="While the trail is rated as easy, there is a challenge creek crossing over a bouncy log bridge with no railings and the upper section of the trail is really rugged and slippery. Use caution when crossing the bridge and don’t do it if you don’t feel comfortable.From the starting point along Chilliwack Lake Road, follow the old logging road as it it passes between trees before reaching a large clearing. Continue to follow the road as it veers to the left and gradually heads uphill. At the end of the old logging road, follow a worn trail with occasional markers into the forest.After entering the forest, just a mere 20 meters or so straight ahead is the lower falls. This waterfall is quite small but still worth seeing before hiking up to the upper falls.Return to the trail and follow the route uphill as there are occasional flagging markers to help guide the way. The trail climbs steeply through the lush forest as the moisture from the creek and waterfall make for ideal conditions for plenty of moss covered trees and rocks." wrappingWidth="1864.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="1006.0">
+                                    <Text layoutX="26.0" layoutY="988.46875" strokeType="OUTSIDE" strokeWidth="0.0" text="While the trail is rated as easy, there is a challenge creek crossing over a bouncy log bridge with no railings and the upper section of the trail is really rugged and slippery. Use caution when crossing the bridge and don’t do it if you don’t feel comfortable.From the starting point along Chilliwack Lake Road, follow the old logging road as it it passes between trees before reaching a large clearing. Continue to follow the road as it veers to the left and gradually heads uphill. At the end of the old logging road, follow a worn trail with occasional markers into the forest.After entering the forest, just a mere 20 meters or so straight ahead is the lower falls. This waterfall is quite small but still worth seeing before hiking up to the upper falls.Return to the trail and follow the route uphill as there are occasional flagging markers to help guide the way. The trail climbs steeply through the lush forest as the moisture from the creek and waterfall make for ideal conditions for plenty of moss covered trees and rocks." wrappingWidth="1864.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="973.0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -172,6 +172,6 @@
          </children>
       </AnchorPane>
       <Button layoutX="65.0" layoutY="1454.0" mnemonicParsing="false" text="View All Reviews" />
-      <Button layoutX="205.0" layoutY="1454.0" mnemonicParsing="false" text="Post review" />
+      <Button fx:id="btnPost" layoutX="205.0" layoutY="1454.0" mnemonicParsing="false" text="Post review" />
    </children>
 </AnchorPane>
