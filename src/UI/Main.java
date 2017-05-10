@@ -1,10 +1,14 @@
-package UI;
+package STV.src.UI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by madoka on 2017/05/09.
@@ -21,8 +25,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            StackPane page = (StackPane) FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
-            Scene scene = new Scene(page);
+            Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("STV");
             primaryStage.show();
@@ -32,5 +36,5 @@ public class Main extends Application {
     }
 }
 
-}
+
 

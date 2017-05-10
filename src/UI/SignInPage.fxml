@@ -72,7 +72,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Button fx:id="btnSignIn" layoutX="168.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Sign In">
+                        <Button fx:id="btnSignIn" layoutX="168.0" layoutY="392.0" mnemonicParsing="false" text="Sign In">
                            <font>
                               <Font size="24.0" />
                            </font>

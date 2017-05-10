@@ -1,4 +1,4 @@
-package UI;
+package STV.src.UI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import src.img.*;
+//import STV.src.img.*;
 
 /**
  * Created by madoka on 2017/05/09.
@@ -26,7 +26,7 @@ public class SignInController extends AnchorPane implements Initializable {
 
     @Override // This method is called by the FXMLLoader when initialization is complete
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        assert myButton != null : "fx:id=\"btnSignIn\" was not injected: check your FXML file 'SignInPage.fxml'.";
+        assert btnSignIn != null : "fx:id=\"btnSignIn\" was not injected: check your FXML file 'SignInPage.fxml'.";
 
         // initialize your logic here: all @FXML variables will have been injected
 
