@@ -1,4 +1,4 @@
-package STV.src.UI;
+package UI;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;

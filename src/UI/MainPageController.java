@@ -1,4 +1,4 @@
-package STV.src.UI;
+package UI;
 
 import java.io.IOException;
 import java.net.URL;
