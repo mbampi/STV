@@ -22,6 +22,7 @@ public class SignInController extends AnchorPane implements Initializable {
     @FXML
     //  fx:id="btnSignIn"
     private Button btnSignIn;// Value injected by FXMLLoader
+    private AnchorPane rootPane;
 
 
     @Override // This method is called by the FXMLLoader when initialization is complete
@@ -31,10 +32,18 @@ public class SignInController extends AnchorPane implements Initializable {
         // initialize your logic here: all @FXML variables will have been injected
 
         btnSignIn.setOnAction(new EventHandler<ActionEvent>() {
+            @FXML
+            private AnchorPane content;
 
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("test");
+                //jump to next page
+                try {
+                    AnchorPane pane = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                rootPane.getChildren().setAll(rootPane);
             }
         });
 

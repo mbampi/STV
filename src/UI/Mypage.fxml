@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.23" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -25,12 +25,12 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Hyperlink layoutX="70.0" layoutY="476.0" text="Edit your profile" textFill="WHITE">
+                  <Hyperlink fx:id="linkProfile" layoutX="70.0" layoutY="476.0" text="Edit your profile" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink id="link_test" layoutX="101.0" layoutY="546.0" text="Post review" textFill="WHITE">
+                  <Hyperlink id="link_test" fx:id="linkPost" layoutX="101.0" layoutY="546.0" text="Post review" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -57,7 +57,7 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="37.0" layoutY="93.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
+                  <Pane fx:id="MyTrail01" layoutX="37.0" layoutY="93.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="174.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="35.0" layoutY="196.0" text="Trail Name">
@@ -107,7 +107,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="697.0" layoutY="93.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
+                  <Pane fx:id="MyTrail02" layoutX="697.0" layoutY="93.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="174.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="35.0" layoutY="196.0" text="Trail Name">
@@ -157,7 +157,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="37.0" layoutY="633.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
+                  <Pane fx:id="Book01" layoutX="37.0" layoutY="633.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="174.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="35.0" layoutY="196.0" text="Trail Name">
@@ -207,7 +207,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="697.0" layoutY="633.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
+                  <Pane fx:id="Book02" layoutX="697.0" layoutY="633.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-style: solid; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="174.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="35.0" layoutY="196.0" text="Trail Name">

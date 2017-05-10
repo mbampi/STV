@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.23" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -29,12 +29,12 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Hyperlink layoutX="70.0" layoutY="476.0" text="Edit your profile" textFill="WHITE">
+                  <Hyperlink fx:id="linkProfile" layoutX="70.0" layoutY="476.0" text="Edit your profile" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink layoutX="101.0" layoutY="546.0" text="Post review" textFill="WHITE">
+                  <Hyperlink fx:id="linkPost" layoutX="101.0" layoutY="546.0" text="Post review" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -88,18 +88,18 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="309.0" layoutY="366.0" prefHeight="200.0" prefWidth="948.0" />
+                        <TextArea fx:id="textComment" layoutX="309.0" layoutY="366.0" prefHeight="200.0" prefWidth="948.0" />
                         <Label layoutX="156.0" layoutY="600.0" text="Picture" textAlignment="RIGHT">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Button layoutX="1202.0" layoutY="868.0" mnemonicParsing="false" text="Post" />
-                        <DatePicker layoutX="311.0" layoutY="180.0" />
-                        <Button layoutX="318.0" layoutY="606.0" mnemonicParsing="false" text="Chose picture" />
-                        <TextField layoutX="312.0" layoutY="127.0" prefHeight="27.0" prefWidth="290.0" />
-                        <TextField layoutX="312.0" layoutY="237.0" prefHeight="27.0" prefWidth="194.0" />
-                        <TextField layoutX="312.0" layoutY="297.0" prefHeight="27.0" prefWidth="194.0" />
+                        <Button fx:id="btnSave" layoutX="1202.0" layoutY="868.0" mnemonicParsing="false" text="Save" />
+                        <DatePicker fx:id="Date" layoutX="311.0" layoutY="180.0" />
+                        <Button fx:id="btnPicture" layoutX="318.0" layoutY="606.0" mnemonicParsing="false" text="Chose picture" />
+                        <TextField fx:id="textTrail" layoutX="312.0" layoutY="127.0" prefHeight="27.0" prefWidth="290.0" />
+                        <TextField fx:id="textTime" layoutX="312.0" layoutY="237.0" prefHeight="27.0" prefWidth="194.0" />
+                        <TextField fx:id="textRating" layoutX="312.0" layoutY="297.0" prefHeight="27.0" prefWidth="194.0" />
                      </children>
                   </Pane>
                </children>

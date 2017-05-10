@@ -16,28 +16,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.24953617810760667" orientation="VERTICAL" prefHeight="1080.0" prefWidth="1920.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="1918.0" style="-fx-background-color: #E4E4E4;">
                <children>
-                  <CheckBox layoutX="19.0" layoutY="110.0" mnemonicParsing="false" text="Dog Friendly">
+                  <CheckBox fx:id="checkDog" layoutX="19.0" layoutY="110.0" mnemonicParsing="false" text="Dog Friendly">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="21.0" layoutY="180.0" mnemonicParsing="false" text="Rated 3.5+">
+                  <CheckBox fx:id="checkRated" layoutX="21.0" layoutY="180.0" mnemonicParsing="false" text="Rated 3.5+">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="210.0" layoutY="116.0" mnemonicParsing="false" text="Camping">
+                  <CheckBox fx:id="checkCamp" layoutX="210.0" layoutY="116.0" mnemonicParsing="false" text="Camping">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="212.0" layoutY="178.0" mnemonicParsing="false" text="Public Transit">
+                  <CheckBox fx:id="checkTransit" layoutX="212.0" layoutY="178.0" mnemonicParsing="false" text="Public Transit">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -51,9 +51,9 @@
                       </Menu>
                     </menus>
                   </MenuBar>
-                  <Slider layoutX="475.0" layoutY="185.0" prefHeight="24.0" prefWidth="300.0" />
-                  <Slider layoutX="813.0" layoutY="187.0" prefHeight="16.0" prefWidth="300.0" />
-                  <Slider layoutX="1165.0" layoutY="186.0" prefHeight="16.0" prefWidth="300.0" />
+                  <Slider fx:id="Distance" layoutX="475.0" layoutY="185.0" prefHeight="24.0" prefWidth="300.0" />
+                  <Slider fx:id="Time" layoutX="813.0" layoutY="187.0" prefHeight="16.0" prefWidth="300.0" />
+                  <Slider fx:id="Elevation" layoutX="1165.0" layoutY="186.0" prefHeight="16.0" prefWidth="300.0" />
                   <Label layoutX="475.0" layoutY="119.0" text="Distance">
                      <font>
                         <Font size="22.0" />
@@ -69,12 +69,12 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="22.0" layoutY="27.0" prefHeight="27.0" prefWidth="531.0" />
+                  <TextField fx:id="textLocation" layoutX="22.0" layoutY="27.0" prefHeight="27.0" prefWidth="531.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="1359.0">
                <children>
-                  <Pane layoutX="31.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="31.0">
+                  <Pane fx:id="Detail01" layoutX="31.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="31.0">
                      <children>
                         <ImageView fitHeight="230.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="17.0" layoutY="248.0" text="TrailName">
@@ -141,7 +141,7 @@
                         <Font size="16.0" />
                      </font>
                   </SplitMenuButton>
-                  <Pane layoutX="661.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;">
+                  <Pane fx:id="Detail02" layoutX="661.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="230.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="17.0" layoutY="248.0" text="TrailName">
@@ -199,7 +199,7 @@
                         <Insets top="64.0" />
                      </padding>
                   </Pane>
-                  <Pane layoutX="1291.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;">
+                  <Pane fx:id="Detail03" layoutX="1291.0" layoutY="162.0" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="230.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                         <Label layoutX="17.0" layoutY="248.0" text="TrailName">
