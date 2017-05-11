@@ -7,7 +7,6 @@ Purpose
 
 Our project provides trail information to users and stock their trail record. Users can search trails by keyword, by filter and by sort. Target trails are which located around Vancouver. The main purpose of our project is providing better hike life for Vancouverites.
 
-
 Project Scope
 
 Background :
@@ -56,15 +55,6 @@ https://docs.google.com/spreadsheets/d/1Oiz4zxraMMXyitpQJy9IGmhtnNiTLe-KOKkTrmUC
 ■Referenced Data
 https://www.vancouvertrails.com/trails/
 
-
-
-
-
-
-
-
-
-
 System Description
 
 Our project system is mainly built as below.
@@ -87,7 +77,6 @@ Trail name
 Rate
 Comment
     
-
 Functional Requirements
 
 Below function is required in our project.
@@ -101,42 +90,11 @@ Post record
 Post review
 Add bookmark
 
-
-Diagrams
-
-Use Case Diagram
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Class Diagram
-
-
-
-
-
-
-
-
-
-
-
-
 Database
 
 The used database in this project was the Google Firebase Realtime Cloud Database, based on JSON. The java-admin Firebase API was used to set the database routines. The database structure is based in two main parents, called Users (taking as “primary key” the username) and Hikes (taking as “primary key” an unique key). Relationship in Firebase is made with parent and children nodes using the primary keys.
 
-As we see in the images, the data is all stores in parent-child relationship, all values being stores with key and value. For multiple value data, is necessary a new parent node creation, storing its values as children. In this case, the use of and ID is necessary, even if the unique key is not a necessary data, as used in the hikes node.
+The data is all stored in parent-child relationship, all values being stores with key and value. For multiple value data, is necessary a new parent node creation, storing its values as children. In this case, the use of and ID is necessary, even if the unique key is not a necessary data, as used in the hikes node.
 
 Google Firebase works with asynchronous data retrieving, making our software development harder as a first-time user. However, after reading the Firebase documentation and asynchronous methods in Java, we made it possible with the use of callbacks. Our connection, data saving, data deleting, data updating and data retrieving with the database is working properly, with no sync problems.
 
