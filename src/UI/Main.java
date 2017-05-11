@@ -1,5 +1,6 @@
 package UI;
 
+import dao.DataBaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,12 +25,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-//            Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
-            Parent root = FXMLLoader.load(Main.class.getResource("Detail.fxml"));
+            DataBaseManager.createDataBase();
+            Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
+            //Parent root = FXMLLoader.load(Main.class.getResource("Detail.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("STV");
             primaryStage.show();
+            
+            
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -62,7 +62,7 @@ public class SearchPageController implements Initializable {
     private ListView<?> trailList_listview;
 
     //need list date
-    observableList<String> list = FXCollections.observableList("Picture","TrailName","Location","Rated","Level","Time","Distance","Season");
+    //observableList<String> list = FXCollections.observableList("Picture","TrailName","Location","Rated","Level","Time","Distance","Season");
 
     /**
      * Initializes the controller class.
@@ -71,7 +71,6 @@ public class SearchPageController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         //setItem(list);
-        trailList_listview.setItems(list);
     }    
 
     @FXML

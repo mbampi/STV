@@ -44,8 +44,8 @@ public class MypageController implements Initializable {
     private ListView<?> bookmark_listview1;
     
    //need list date
-    observableList<String> list1 = FXCollections.observableList("Picture","TrailName","Location","Rated","Level","Time","Distance","Season");
-    observableList<String> list2 = FXCollections.observableList("Picture","TrailName","Location","Rated","Level","Time","Distance","Season");
+    //observableList<String> list1 = FXCollections.observableList("Picture","TrailName","Location","Rated","Level","Time","Distance","Season");
+    //observableList<String> list2 = FXCollections.observableList("Picture","TrailName","Location","Rated","Level","Time","Distance","Season");
 
     /**
      * Initializes the controller class.
@@ -54,8 +54,8 @@ public class MypageController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         //setItem(list);
-        completed_listview.setItems(list1);
-        bookmark_listview1.setItems(list2);
+//        completed_listview.setItems(list1);
+//        bookmark_listview1.setItems(list2);
     }    
 
     @FXML
