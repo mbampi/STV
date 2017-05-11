@@ -70,8 +70,6 @@ public class SearchPageController implements Initializable {
      */
     
     
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -80,23 +78,27 @@ public class SearchPageController implements Initializable {
         
         
 
-        TableColumn firstNameCol = new TableColumn("First Name");
-        firstNameCol.setMinWidth(100);
-        firstNameCol.setCellValueFactory(
-        new PropertyValueFactory<TOHike, String>("firstName"));
- 
-        TableColumn lastNameCol = new TableColumn("Last Name");
-        lastNameCol.setMinWidth(100);
-        lastNameCol.setCellValueFactory(
-                new PropertyValueFactory<TOHike, String>("lastName"));
- 
-        TableColumn emailCol = new TableColumn("Email");
-        emailCol.setMinWidth(200);
-        emailCol.setCellValueFactory(
-                new PropertyValueFactory<TOHike, String>("email"));
- 
-        table.setItems(data);
-        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+//        TableColumn firstNameCol = new TableColumn("Name");
+//        firstNameCol.setMinWidth(100);
+//        firstNameCol.setCellValueFactory(
+//        new PropertyValueFactory<TOHike, String>("HName"));
+// 
+//        TableColumn lastNameCol = new TableColumn("Distance");
+//        lastNameCol.setMinWidth(100);
+//        lastNameCol.setCellValueFactory(
+//                new PropertyValueFactory<TOHike, String>("HDistance"));
+// 
+//        TableColumn emailCol = new TableColumn("Time");
+//        emailCol.setMinWidth(200);
+//        emailCol.setCellValueFactory(
+//                new PropertyValueFactory<TOHike, String>("HTime"));
+//        
+//        TableColumn ratingCol = new TableColumn("Rating");
+//        emailCol.setMinWidth(200);
+//        emailCol.setCellValueFactory(
+//                new PropertyValueFactory<TOHike, String>("HRating"));
+// 
+//        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol, ratingCol);
         
         
     }    
@@ -112,15 +114,16 @@ public class SearchPageController implements Initializable {
         hike_dao.allHikes(new HikeDAO.hikeListCallback(){
             @Override
             public void done(List<Hike> hikeList) {
-                data =
-            FXCollections.observableArrayList(
-            //new TOHike("Jacob", "Smith", "jacob.smith@example.com"),
-            );
-            for(Hike hike : hikeList){
-                TOHike hiketo = new TOHike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getRating().toString());
-                 data.add(hiketo);
-            }
-               
+//                data =
+//            FXCollections.observableArrayList(
+//            //new TOHike("Jacob", "Smith", "jacob.smith@example.com"),
+//            );
+//            for(Hike hike : hikeList){
+//                TOHike hiketo = new TOHike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getRating().toString());
+//                 data.add(hiketo);
+//            }
+//               table.setItems(data);
+            
                 
                 
             }
@@ -164,6 +167,24 @@ public class SearchPageController implements Initializable {
             this.HTime = new SimpleStringProperty(HTime);
             this.HRating = new SimpleStringProperty(HRating);
         }
+
+        public SimpleStringProperty getHName() {
+            return HName;
+        }
+
+        public SimpleStringProperty getHDistance() {
+            return HDistance;
+        }
+
+        public SimpleStringProperty getHTime() {
+            return HTime;
+        }
+
+        public SimpleStringProperty getHRating() {
+            return HRating;
+        }
+        
+        
     }
     
 }

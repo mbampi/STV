@@ -96,10 +96,15 @@ public class SignInPageController implements Initializable {
                 if(user.getPassword().equals(password)){
                     try {
                         System.out.println("Login");
-                        Alert alert = new Alert(AlertType.INFORMATION);
-                        alert.setTitle("Information Dialog");
-                        alert.setContentText("Login");
-                        alert.showAndWait();
+//                        Stage dialogStage = new Stage();
+//                        dialogStage.initModality(Modality.WINDOW_MODAL);
+//
+//                        VBox vbox = new VBox(new Text("Login"), new Button("Ok."));
+//                        vbox.setAlignment(Pos.CENTER);
+//                        //vbox.setPadding(new Insets(15));
+//
+//                        dialogStage.setScene(new Scene(vbox));
+//                        dialogStage.show();
                         //open searchpageController
                             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SearchPage.fxml"));
                             Parent root1 = (Parent) fxmlLoader.load();
