@@ -7,51 +7,37 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.23" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1078.0" prefWidth="455.0" style="-fx-background-color: #16A085;">
                <children>
-                  <Text fill="WHITE" layoutX="142.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uset Name">
+                  <Text fx:id="userName_label" fill="WHITE" layoutX="142.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uset Name">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="134.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail adress">
+                  <Text fx:id="eMail_label" fill="WHITE" layoutX="134.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail adress">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Hyperlink fx:id="linkProfile" layoutX="70.0" layoutY="476.0" text="Edit your profile" textFill="WHITE">
+                  <Hyperlink fx:id="profile_btn" layoutX="70.0" layoutY="476.0" onAction="#profileClicked" text="Edit your profile" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="linkPost" layoutX="101.0" layoutY="546.0" text="Post review" textFill="WHITE">
+                  <Hyperlink fx:id="post_btn" layoutX="101.0" layoutY="546.0" onAction="#postClicked" text="Post review" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Hyperlink>
-                  <Pane layoutX="143.0" layoutY="618.0" prefHeight="420.0" prefWidth="437.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="618.0">
-                     <children>
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="148.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="295.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="1.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="148.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="295.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="1.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="148.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="295.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </Pane>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
@@ -88,18 +74,18 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="textComment" layoutX="309.0" layoutY="366.0" prefHeight="200.0" prefWidth="948.0" />
+                        <TextArea fx:id="postComment_field" layoutX="309.0" layoutY="366.0" prefHeight="200.0" prefWidth="948.0" />
                         <Label layoutX="156.0" layoutY="600.0" text="Picture" textAlignment="RIGHT">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnSave" layoutX="1202.0" layoutY="868.0" mnemonicParsing="false" text="Save" />
-                        <DatePicker fx:id="Date" layoutX="311.0" layoutY="180.0" />
-                        <Button fx:id="btnPicture" layoutX="318.0" layoutY="606.0" mnemonicParsing="false" text="Chose picture" />
-                        <TextField fx:id="textTrail" layoutX="312.0" layoutY="127.0" prefHeight="27.0" prefWidth="290.0" />
-                        <TextField fx:id="textTime" layoutX="312.0" layoutY="237.0" prefHeight="27.0" prefWidth="194.0" />
-                        <TextField fx:id="textRating" layoutX="312.0" layoutY="297.0" prefHeight="27.0" prefWidth="194.0" />
+                        <Button fx:id="postSave_btn" layoutX="1202.0" layoutY="868.0" mnemonicParsing="false" onAction="#saveClicked" text="Save" />
+                        <DatePicker fx:id="postDate_datapicker" layoutX="311.0" layoutY="180.0" onAction="#dateSelect" />
+                        <Button fx:id="postPicture_btn" layoutX="318.0" layoutY="606.0" mnemonicParsing="false" onAction="#pictureClicked" text="Chose picture" />
+                        <TextField fx:id="postTrail_field" layoutX="312.0" layoutY="127.0" prefHeight="27.0" prefWidth="290.0" />
+                        <TextField fx:id="postTime_field" layoutX="312.0" layoutY="237.0" prefHeight="27.0" prefWidth="194.0" />
+                        <TextField fx:id="postRating_field" layoutX="312.0" layoutY="297.0" prefHeight="27.0" prefWidth="194.0" />
                      </children>
                   </Pane>
                </children>
