@@ -10,7 +10,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -21,10 +20,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import model.Hike;
 
 /**
@@ -114,18 +111,15 @@ public class SearchPageController implements Initializable {
         hike_dao.allHikes(new HikeDAO.hikeListCallback(){
             @Override
             public void done(List<Hike> hikeList) {
-//                data =
-//            FXCollections.observableArrayList(
-//            //new TOHike("Jacob", "Smith", "jacob.smith@example.com"),
-//            );
-//            for(Hike hike : hikeList){
-//                TOHike hiketo = new TOHike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getRating().toString());
-//                 data.add(hiketo);
-//            }
-//               table.setItems(data);
-            
-                
-                
+////                data =
+////            FXCollections.observableArrayList(
+////            //new TOHike("Jacob", "Smith", "jacob.smith@example.com"),
+////            );
+////            for(Hike hike : hikeList){
+////                TOHike hiketo = new TOHike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getRating().toString());
+////                 data.add(hiketo);
+////            }
+////               table.setItems(data);
             }
         }); 
         

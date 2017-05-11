@@ -26,8 +26,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             DataBaseManager.createDataBase();
-//            Parent root = FXMLLoader.load(Main.class.getResource("SearchPage.fxml"));
-            Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
+            Parent root = FXMLLoader.load(Main.class.getResource("SearchPage.fxml"));
+            //Parent root = FXMLLoader.load(Main.class.getResource("SignInPage.fxml"));
             //Parent root = FXMLLoader.load(Main.class.getResource("Detail.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
