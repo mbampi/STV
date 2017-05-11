@@ -6,11 +6,8 @@
 package UI;
 
 import dao.UserDAO;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -104,14 +101,16 @@ public class SignInPageController implements Initializable {
                         alert.setContentText("Login");
                         alert.showAndWait();
                         //open searchpageController
-                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SearchPageController.fxml"));
+                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SearchPage.fxml"));
                             Parent root1 = (Parent) fxmlLoader.load();
                             Stage stage = new Stage();
                             stage.initModality(Modality.APPLICATION_MODAL);
                             stage.initStyle(StageStyle.UNDECORATED);
                             stage.setScene(new Scene(root1));  
                             stage.show();
-                        }catch(Exception e){ System.out.println("aaaa");  }
+                        }catch(Exception e){ System.out.println("aaaa");
+                        System.out.println(e.getStackTrace().toString());
+                        System.out.println(e.getMessage());}
                     
                 }else{
                     System.out.println("Incorrect Login");

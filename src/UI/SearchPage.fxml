@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +19,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SearchPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SearchPageController">
    <children>
       <SplitPane dividerPositions="0.2193211488250653" orientation="VERTICAL" prefHeight="768.0" prefWidth="1024.0">
         <items>
@@ -75,11 +79,6 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="1359.0">
                <children>
-                  <ScrollPane layoutY="-5.0" prefHeight="594.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <content>
-                      <AnchorPane maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="1024.0" />
-                    </content>
-                  </ScrollPane>
                   <SplitMenuButton fx:id="order_btn" layoutX="901.0" layoutY="12.0" mnemonicParsing="false" onAction="#orderClicked" text="order" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="8.0">
                     <items>
                       <MenuItem fx:id="descending_btn" mnemonicParsing="false" onAction="#descendingClicked" onMenuValidation="#descendingChoice" text="descending order" />
@@ -89,7 +88,12 @@
                         <Font size="16.0" />
                      </font>
                   </SplitMenuButton>
-                  <ListView fx:id="trailList_listview" layoutX="26.0" layoutY="92.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="68.0" />
+                  <TableView fx:id="trailList_tableview" layoutX="14.0" layoutY="8.0" prefHeight="583.0" prefWidth="989.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
         </items>
