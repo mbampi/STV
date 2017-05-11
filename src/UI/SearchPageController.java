@@ -111,9 +111,11 @@ public class SearchPageController implements Initializable {
         hike_dao.allHikes(new HikeDAO.hikeListCallback(){
             @Override
             public void done(List<Hike> hikeList) {
+                
+                hikeList.get(0);
+                
 ////                data =
 ////            FXCollections.observableArrayList(
-////            //new TOHike("Jacob", "Smith", "jacob.smith@example.com"),
 ////            );
 ////            for(Hike hike : hikeList){
 ////                TOHike hiketo = new TOHike(hike.getName(), hike.getDistance(), hike.getTime(), hike.getRating().toString());
